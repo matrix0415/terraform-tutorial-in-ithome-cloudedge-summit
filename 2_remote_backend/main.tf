@@ -24,6 +24,7 @@ resource "aws_key_pair" "deployer" {
 }
 
 resource "aws_security_group" "sg" {
+  name = "default-sg"
   ingress {
     from_port   = 22
     to_port     = 22

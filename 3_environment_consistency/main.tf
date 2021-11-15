@@ -32,7 +32,7 @@ resource "aws_key_pair" "deployer" {
 }
 
 resource "aws_security_group" "sg" {
-  name = terraform.workspace
+  name = "${terraform.workspace}-sg"
   ingress {
     from_port   = 22
     to_port     = 22
