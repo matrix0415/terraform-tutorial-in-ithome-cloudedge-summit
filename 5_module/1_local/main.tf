@@ -22,7 +22,8 @@ variable "instance_type" {
 }
 
 variable "public_key" {
-  type = string
+  type    = string
+  default = "" // TODO: fill in your public key
 }
 
 // ap-northeast-1
