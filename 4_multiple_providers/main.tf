@@ -59,7 +59,7 @@ output "ip" {
 
 // ap-southeast-1
 resource "aws_instance" "instance_southeast" {
-  ami                    = "ami-036d0684fc96830ca" // Ubuntu 20.04 LTS
+  ami                    = "ami-0fed77069cd5a6d6c" // Ubuntu 20.04 LTS
   instance_type          = var.instance_type
   key_name               = aws_key_pair.deployer_southeast.key_name
   vpc_security_group_ids = [aws_security_group.sg_southeast.id]

@@ -1,5 +1,5 @@
 resource "aws_instance" "instance" {
-  ami                    = "ami-036d0684fc96830ca" // Ubuntu 20.04 LTS
+  ami                    = var.ami_id // Ubuntu 20.04 LTS
   instance_type          = var.instance_type
   key_name               = aws_key_pair.deployer.key_name
   vpc_security_group_ids = [aws_security_group.sg.id]

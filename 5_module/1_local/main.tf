@@ -28,6 +28,7 @@ variable "public_key" {
 // ap-northeast-1
 module "ec2" {
   source        = "./ec2"
+  ami_id        = "ami-036d0684fc96830ca"
   instance_type = var.instance_type
   public_key    = var.public_key
 }
@@ -36,6 +37,7 @@ module "ec2" {
 // ap-southeast-1
 module "ec2_southeast" {
   source        = "./ec2"
+  ami_id        = "ami-0fed77069cd5a6d6c"
   instance_type = var.instance_type
   public_key    = var.public_key
   providers     = {
