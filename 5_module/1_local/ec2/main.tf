@@ -6,13 +6,11 @@ resource "aws_instance" "instance" {
   tags = {
     Name = terraform.workspace
   }
-  provider = "aws"
 }
 
 resource "aws_key_pair" "deployer" {
   key_name   = "deployer-key-${terraform.workspace}"
   public_key = var.public_key
-  provider   = "aws"
 }
 
 resource "aws_security_group" "sg" {
@@ -23,6 +21,5 @@ resource "aws_security_group" "sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  provider = "aws"
 }
 

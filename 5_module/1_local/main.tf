@@ -11,7 +11,8 @@ provider "aws" {
   region = "ap-northeast-1"
 }
 
-provider "aws_southeast" {
+provider "aws" {
+  alias  = "southeast"
   region = "ap-southeast-1"
 }
 
@@ -38,6 +39,6 @@ module "ec2_southeast" {
   instance_type = var.instance_type
   public_key    = var.public_key
   providers     = {
-    aws = aws_southeast
+    aws = aws.southeast
   }
 }

@@ -11,6 +11,11 @@ provider "aws" {
   region = "ap-northeast-1"
 }
 
+provider "aws" {
+  alias  = "southeast"
+  region = "ap-southeast-1"
+}
+
 resource "aws_default_vpc" "vpc" {}
 resource "aws_default_subnet" "subnet" {
   availability_zone = "ap-northeast-1a"

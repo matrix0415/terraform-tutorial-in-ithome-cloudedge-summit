@@ -11,7 +11,8 @@ provider "aws" {
   region = "ap-northeast-1"
 }
 
-provider "aws_southeast" {
+provider "aws" {
+  alias  = "southeast"
   region = "ap-southeast-1"
 }
 
@@ -65,13 +66,13 @@ resource "aws_instance" "instance_southeast" {
   tags = {
     Name = terraform.workspace
   }
-  provider = "aws_southeast"
+  provider = aws.southeast
 }
 
 resource "aws_key_pair" "deployer_southeast" {
   key_name   = "deployer-key-${terraform.workspace}"
   public_key = "" // TODO: fill in your public key
-  provider   = "aws_southeast"
+  provider   = aws.southeast
 }
 
 resource "aws_security_group" "sg_southeast" {
@@ -82,7 +83,7 @@ resource "aws_security_group" "sg_southeast" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  provider = "aws_southeast"
+  provider = aws.southeast
 }
 
 output "id_southeast" {
