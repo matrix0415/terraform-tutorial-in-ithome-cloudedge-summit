@@ -1,12 +1,3 @@
-terraform {
-  backend "s3" {
-    bucket         = "" // TODO: fill in your s3 bucket
-    region         = "ap-northeast-1"
-    key            = "terraform.tfstate"
-    dynamodb_table = "" // TODO: fill in your DynamoDB
-  }
-}
-
 provider "aws" {
   region = "ap-northeast-1"
 }
@@ -19,7 +10,7 @@ resource "aws_instance" "instance" {
 }
 
 resource "aws_key_pair" "deployer" {
-  key_name   = "deployer-key"
+  key_name   = "deployer-key-default"
   public_key = "" // TODO: fill in your public key
 }
 

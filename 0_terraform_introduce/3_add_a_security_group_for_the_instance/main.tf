@@ -10,7 +10,7 @@ resource "aws_instance" "instance" {
 }
 
 resource "aws_key_pair" "deployer" {
-  key_name   = "deployer-key"
+  key_name   = "deployer-key-default"
   public_key = "" // TODO: fill in your public key
 }
 
